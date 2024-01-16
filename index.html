@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 5%;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="Calculator">
+      <header>
+        <div>calc</div>
+
+        <div class="theme">
+          <div class="theme_label">Theme</div>
+          <div>
+            <div class="theme-selectors__label">
+              <span><label for="dark">1</label></span>
+              <span><label for="white">2</label></span>
+              <span><label for="black">3</label></span>
+            </div>
+            <div class="radiobtns">
+              <input type="radio" name="theme" id="dark" />
+              <input type="radio" name="theme" id="white" />
+              <input type="radio" name="theme" id="black" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <textarea class="resultTextArea" name="result" id="result"></textarea>
+
+      <div class="ops">
+        <div id="first-row" class="row">
+          <div class="num">7</div>
+          <div class="num" class="suceeding">8</div>
+          <div class="num" class="suceeding">9</div>
+          <div class="num" class="suceeding">DEL</div>
+        </div>
+        <div id="second-row" class="row">
+          <div class="num">4</div>
+          <div class="num">5</div>
+          <div class="num">6</div>
+          <div class="num">+</div>
+        </div>
+        <div id="third-row" class="row">
+          <div class="num">1</div>
+          <div class="num">2</div>
+          <div class="num">3</div>
+          <div class="num">-</div>
+        </div>
+        <div id="forth-row" class="row">
+          <div class="num">.</div>
+          <div class="num">0</div>
+          <div class="num">/</div>
+          <div class="num">x</div>
+        </div>
+        <div id="fifth-row" class="last-row">
+          <div class="num">RESET</div>
+          <div class="num">=</div>
+        </div>
+      </div>
+
+      <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    </main>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
