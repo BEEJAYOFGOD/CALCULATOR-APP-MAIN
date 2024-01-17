@@ -1,10 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Open+Sans&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -31,10 +36,10 @@
   <body>
     <main class="Calculator">
       <header>
-        <div>calc</div>
+        <div class="title">calc</div>
 
         <div class="theme">
-          <div class="theme_label">Theme</div>
+          <div class="theme_label">THEME</div>
           <div>
             <div class="theme-selectors__label">
               <span><label for="dark">1</label></span>
@@ -56,7 +61,7 @@
           <div class="num">7</div>
           <div class="num" class="suceeding">8</div>
           <div class="num" class="suceeding">9</div>
-          <div class="num" class="suceeding">DEL</div>
+          <div class="num" id="del">DEL</div>
         </div>
         <div id="second-row" class="row">
           <div class="num">4</div>
@@ -77,8 +82,8 @@
           <div class="num">x</div>
         </div>
         <div id="fifth-row" class="last-row">
-          <div class="num">RESET</div>
-          <div class="num">=</div>
+          <div class="num" id="reset">RESET</div>
+          <div class="num" id="equal">=</div>
         </div>
       </div>
 
