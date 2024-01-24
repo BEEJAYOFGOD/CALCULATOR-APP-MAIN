@@ -2,7 +2,6 @@
   font-family: league spartan;
   src: url(./assets/LeagueSpartan-VariableFont_wght.ttf);
 }
-
 body {
   background-color: hsl(222, 26%, 31%);
   /* height: 100vh; */
@@ -19,25 +18,6 @@ main {
   box-sizing: border-box;
   padding: 4%;
   background-color: hsl(222, 26%, 31%);
-}
-
-body.light {
-  background-color: #fff;
-  color: #333;
-}
-
-body.dark {
-  background-color: #111;
-  color: #ddd;
-  opacity: 0.2;
-}
-
-input:focus-visible {
-  font-family: league spartan;
-}
-
-input {
-  font-family: inherit; /* Inherit font from parent element */
 }
 
 body,
@@ -157,6 +137,7 @@ input:checked {
   width: 100%;
   height: 5rem;
   text-align: right;
+
   background-color: hsl(223, 31%, 20%);
   border-radius: 7px;
   /* display: flex;
@@ -216,8 +197,7 @@ button:active {
   display: flex;
   justify-content: space-evenly;
   /* padding-bottom: 4%; */
-  padding-bottom: 2%;
-  align-items: center;
+  margin-bottom: 4%;
 }
 
 .last-row button {
@@ -226,21 +206,19 @@ button:active {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  margin: 4% 0%;
+  margin: 5% 0% 0%;
 }
 
 .last-row button:active {
-  margin-top: 3%;
+  margin: 4% 0% 1%;
 }
 
 #reset {
-  background-color: white;
-  box-shadow: 0px 0.3rem 0px hsl(224, 28%, 35%);
-  font-family: league spartan;
-  color: white;
-  font-size: 1.2rem;
+  background-color: hsl(222, 26%, 31%);
+  box-shadow: 0px 0.3rem 0px hsl(220, 3%, 65%);
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.2rem;
+  color: white;
 }
 
 #equal {
@@ -249,4 +227,18 @@ button:active {
   font-size: 1rem;
   font-weight: 700;
   color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffff;
+    color: #333;
+  }
 }
