@@ -1,10 +1,76 @@
 @font-face {
-  font-family: league spartan;
-  src: url(./assets/LeagueSpartan-VariableFont_wght.ttf);
+  font-family: "league spartan";
+  src: url(../assets/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+:root {
+  /* bakgrounds*/
+  --main-bg: hsl(222, 26%, 31%);
+  --togge-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-bg: hsl(225, 21%, 49%);
+  --key-sh: hsl(224, 28%, 35%);
+
+  --equal-bg: hsl(6, 63%, 50%);
+  --equal-sh: hsl(6, 70%, 34%);
+
+  --operand-bg: hsl(30, 25%, 89%);
+  --operand-sh: hsl(28, 16%, 65%);
+
+  /* text*/
+  --operand-color: hsl(221, 14%, 31%);
+  --equal-color: hsl(0, 0%, 100%);
+  --result-color: white;
+}
+
+:root:has(#light:checked) {
+  /* bakgrounds*/
+  --main-bg: hsl(0, 0%, 90%);
+  --togge-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --key-bg: hsl(184, 88%, 35%);
+  --key-sh: hsl(185, 58%, 25%);
+
+  --equal-bg: hsl(25, 98%, 40%);
+  --equal-sh: hsl(25, 99%, 27%);
+
+  --operand-bg: hsl(45, 7%, 89%);
+  --operand-sh: hsl(35, 11%, 61%);
+
+  /* text*/
+  --operand-color: hsl(60, 10%, 19%);
+  --white: hsl(0, 0%, 100%);
+  --result-color: hsl(60, 10%, 19%);
+}
+
+:root:has(#black:checked) {
+  /* bakgrounds*/
+  --main-bg: hsl(268, 75%, 9%);
+  --togge-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --key-bg: hsl(281, 89%, 26%);
+  --key-sh: hsl(285, 91%, 52%);
+
+  --equal-bg: hsl(176, 100%, 44%);
+  --equal-sh: hsl(177, 92%, 70%);
+
+  --operand-bg: hsl(268, 47%, 21%);
+  --operand-sh: hsl(290, 70%, 36%);
+
+  /* text*/
+  --operand-color: hsl(52, 100%, 62%);
+  --white: hsl(198, 20%, 13%);
+  --result-color: hsl(52, 100%, 62%);
 }
 
 body {
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-bg);
   /* height: 100vh; */
   display: flex;
   align-items: center;
@@ -18,26 +84,7 @@ main {
   /* border: 1px solid red; */
   box-sizing: border-box;
   padding: 4%;
-  background-color: hsl(222, 26%, 31%);
-}
-
-body.light {
-  background-color: #fff;
-  color: #333;
-}
-
-body.dark {
-  background-color: #111;
-  color: #ddd;
-  opacity: 0.2;
-}
-
-input:focus-visible {
-  font-family: league spartan;
-}
-
-input {
-  font-family: inherit; /* Inherit font from parent element */
+  background-color: var(--main-bg);
 }
 
 body,
@@ -52,42 +99,44 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 .title {
   font-size: 2rem;
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
-  color: white;
+  color: var(--result-color);
 }
 
 .theme {
   display: flex;
   gap: 30px;
 }
+
 .theme-selectors__label {
   display: flex;
   gap: 8px;
   justify-content: center;
-  color: hsl(30, 25%, 89%);
+  color: var(--result-color);
   font-family: "League Spartan", sans-serif;
 }
 .theme-selectors__label label {
   cursor: pointer;
 }
+
 .theme_label {
   align-self: flex-end;
   font-size: 0.9rem;
   font-family: "League Spartan", sans-serif;
   font-weight: 600;
-  color: white;
+  color: var(--result-color);
 }
 
 .radiobtns {
   display: flex;
-  background-color: hsl(224, 28%, 35%);
   padding: 4px 4px 4px 5px;
   border-radius: 10px;
   gap: 2px;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--togge-bg);
   align-items: center;
   justify-content: center;
 }
@@ -116,13 +165,12 @@ header {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: hsl(223, 31%, 20%);
 }
 
 .label:hover .checkmark {
   position: absolute;
-  background-color: hsl(220, 3%, 65%);
-  opacity: 0.2;
+  background-color: var(--equal-sh);
+  opacity: 0.4;
   height: 12px;
   width: 12px;
   border-radius: 50%;
@@ -130,12 +178,12 @@ header {
 }
 
 .label input:checked ~ .checkmark {
-  background-color: hsl(6, 90%, 48%);
+  background-color: var(--equal-bg);
 }
 
 .label:hover input:checked ~ .checkmark {
-  background-color: hsl(6, 73%, 66%);
-  opacity: 1;
+  background-color: var(--equal-sh);
+  opacity: 0.8;
 }
 
 /* .label:hover {
@@ -147,17 +195,17 @@ input:checked {
 }
 */
 
-.resultTextArea {
+input[type="text"].resultTextArea {
+  color: var(--result-color);
   font-family: league spartan;
   outline: none;
-  border: none;
-  color: white;
+  border: 0;
   font-size: 2rem;
   margin-top: 4%;
   width: 100%;
   height: 5rem;
   text-align: right;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--screen-bg);
   border-radius: 7px;
   /* display: flex;
   align-items: center; */
@@ -172,10 +220,17 @@ input:checked {
   width: 100%;
   margin: 0 auto;
   margin-top: 4%;
-  background-color: hsl(223, 31%, 20%);
   border-radius: 6px;
   justify-content: center;
+  background-color: var(--togge-bg);
 }
+
+.op {
+  color: var(--operand-color);
+  background-color: var(--operand-bg);
+  box-shadow: 0px 0.3rem 0px var(--operand-sh);
+}
+
 .row {
   display: flex;
   border-radius: 3px;
@@ -197,10 +252,8 @@ button,
 #equal {
   font-size: 3rem;
   padding: 1.4rem 0.1rem;
-  background-color: hsl(30, 25%, 89%);
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0px 0.3rem 0px hsl(28, 16%, 65%);
-  color: hsl(223, 31%, 20%);
+  /* color: hsl(223, 31%, 20%); */
   font-family: "League Spartan", sans-serif;
   font-size: 1.2rem;
   font-weight: 1000;
@@ -216,8 +269,7 @@ button:active {
   display: flex;
   justify-content: space-evenly;
   /* padding-bottom: 4%; */
-  padding-bottom: 2%;
-  align-items: center;
+  margin-bottom: 4%;
 }
 
 .last-row button {
@@ -226,27 +278,31 @@ button:active {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  margin: 4% 0%;
+  margin: 5% 0% 0%;
 }
 
 .last-row button:active {
-  margin-top: 3%;
+  margin: 4% 0% 1%;
+}
+
+#del {
+  background-color: var(--key-bg);
+  box-shadow: 0px 0.3rem 0px var(--key-sh);
+  color: white;
 }
 
 #reset {
-  background-color: white;
-  box-shadow: 0px 0.3rem 0px hsl(224, 28%, 35%);
-  font-family: league spartan;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-}
-
-#equal {
-  background-color: hsl(6, 63%, 50%);
-  box-shadow: 0px 0.3rem 0px hsl(6, 70%, 34%);
+  background-color: var(--key-bg);
+  box-shadow: 0px 0.3rem 0px var(--key-sh);
   font-size: 1rem;
   font-weight: 700;
   color: white;
+}
+
+#equal {
+  background-color: var(--equal-bg);
+  box-shadow: 0px 0.3rem 0px var(--equal-sh);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--equal-color);
 }

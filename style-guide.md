@@ -57,6 +57,9 @@ The designs were created to the following widths:
 - Very dark grayish yellow: hsl(60, 10%, 19%)
 - White (text): hsl(0, 0%, 100%)
 
+
+
+
 ### Theme 3
 
 #### Backgrounds
