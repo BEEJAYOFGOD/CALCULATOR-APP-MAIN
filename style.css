@@ -83,7 +83,7 @@ main {
   min-width: 100%;
   /* border: 1px solid red; */
   box-sizing: border-box;
-  padding: 4%;
+  padding: 0% 9%;
   background-color: var(--main-bg);
 }
 
