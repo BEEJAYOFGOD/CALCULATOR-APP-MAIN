@@ -207,6 +207,7 @@ input[type="text"].resultTextArea {
   text-align: right;
   background-color: var(--screen-bg);
   border-radius: 7px;
+  font-weight: 700;
   /* display: flex;
   align-items: center; */
 }

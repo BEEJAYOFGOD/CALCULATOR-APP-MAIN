@@ -3,15 +3,16 @@ let result = document.getElementById("result");
 let equalButton = document.getElementById("equal");
 let resetButton = document.getElementById("reset");
 let delButton = document.getElementById("del");
-let themes = document.querySelectorAll('[name="theme"]');
+let colorThemes = document.querySelectorAll('[name="theme"]');
 
 console.log("amen");
 
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
+  /* This is to save the user choice into local storage */
 }
 
-themes.forEach((theme) => {
+colorThemes.forEach((theme) => {
   theme.addEventListener("click", () => {
     setTheme(theme.id);
   });
@@ -19,10 +20,11 @@ themes.forEach((theme) => {
 
 const getTheme = function () {
   const activeTheme = localStorage.getItem("theme");
+  // get theme already daved my user
 
-  console.log("adedare");
+  // console.log("adedare");
 
-  themes.forEach((theme) => {
+  colorThemes.forEach((theme) => {
     if (theme.id == activeTheme) {
       theme.checked = true;
     }
