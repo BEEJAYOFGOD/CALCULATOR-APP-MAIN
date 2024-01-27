@@ -307,3 +307,18 @@ button:active {
   font-weight: 700;
   color: var(--equal-color);
 }
+
+@media only screen and (min-width: 1040px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .calculator {
+    min-width: 40%;
+
+    padding: 0.2% 0% 0%;
+  }
+  .resultTextArea {
+    max-height: 12%;
+  }
+}
