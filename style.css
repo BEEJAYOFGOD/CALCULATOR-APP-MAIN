@@ -281,7 +281,7 @@ button:active {
   align-items: center;
   border-radius: 4px;
   margin: 5% 0% 0%;
-  transition: margin 0.15s;
+  transition: margin 0.1s;
 }
 
 .last-row button:active {
