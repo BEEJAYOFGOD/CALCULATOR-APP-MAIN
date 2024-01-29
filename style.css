@@ -230,6 +230,7 @@ input[type="text"].resultTextArea {
   color: var(--operand-color);
   background-color: var(--operand-bg);
   box-shadow: 0px 0.3rem 0px var(--operand-sh);
+  transition: margin 0.1s;
 }
 
 .row {
@@ -280,6 +281,7 @@ button:active {
   align-items: center;
   border-radius: 4px;
   margin: 5% 0% 0%;
+  transition: margin 0.15s;
 }
 
 .last-row button:active {

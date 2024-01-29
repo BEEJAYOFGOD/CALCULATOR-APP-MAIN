@@ -43,6 +43,7 @@ equalButton.addEventListener("click", () => {
   result.value = eval(result.value);
 
   console.log(result.value.length);
+  console.log(formatResult());
 });
 
 delButton.addEventListener("click", () => {
@@ -58,3 +59,26 @@ console.log("900");
 let myarr = [2, 4, 5];
 myarr.push(3);
 console.log(myarr);
+
+let count = 0;
+
+function formatResult() {
+  const Answer = result.value.toString();
+  let newResult = new Array();
+  let decoyAnswer = Answer.reverse();
+
+  for (let i = Answer.length - 1; i <= 0; i--) {
+    count += 1;
+    if (count == 3) {
+      decoyAnswer.push(",");
+    }
+    decoyAnswer.push(Answer[i]);
+  }
+
+  return decoyAnswer;
+}
+
+
+// // Output: "1,234,567"
+// result.value = "";
+// result.value = formatNumberWithCommas(result.value);
